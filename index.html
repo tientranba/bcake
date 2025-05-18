@@ -25,12 +25,13 @@
         font-weight: 600;
       }
 
-      .instruction {
-        font-size: 0.9rem;
+      .instruction, h1   {
+        font-size: 1.5rem;
         font-family: 'Dancing Script', 'Be Vietnam Pro', cursive;/* Đổi từ font-style sang font-family */
         color: #8b6a60;
         margin-top: 0.5em;
       }
+
 
       #cake {
         display: block;
@@ -303,9 +304,9 @@
         <rect x="10" y="475.571" fill="#fefae9" width="180" height="4" />
       </svg>
       <div class="text">
-      <h1>happy birthday!</h1>
-      <p class="name">Mayyy</p>
-      <p class="instruction">nhắm mắt lại ước sau đó thổi nến nhaaa!</p>
+      <h1>Ước gì đó rồi thổi nến nhé!</h1>
+      <p class="name"></p>
+      <p class="instruction"></p>
       </div>
       <script>
         // Lấy các ngọn lửa
@@ -327,7 +328,7 @@
             setTimeout(() => {
               window.location.href = 'https://tientranba.github.io/MHB/'; // Thay bằng link bạn muốn chuyển đến
             }, 1000); // Thời gian chờ để hoàn tất hiệu ứng mờ dần
-          }, 3000);
+          }, 4500);
         }
 
         // Sử dụng Web Audio API để phát hiện âm thanh từ micro
@@ -347,7 +348,7 @@
               const volume = dataArray.reduce((a, b) => a + b, 0) / dataArray.length;
 
               console.log('Volume:', volume); // Log âm lượng để kiểm tra
-              if (volume > 8) { // Giảm ngưỡng để dễ phát hiện âm thanh
+              if (volume > 18) { // Giảm ngưỡng để dễ phát hiện âm thanh
                 blowOutCandles();
               }
 
@@ -374,6 +375,15 @@
           cakeElement.style.opacity = '1';
           cakeElement.style.transform = 'translateY(0)';
         });
+
+        // Ẩn dòng chữ h1 khi tải trang
+        const h1Element = document.querySelector('h1');
+        h1Element.style.display = 'none';
+
+        // Hiển thị dòng chữ h1 sau 3 giây
+        setTimeout(() => {
+          h1Element.style.display = 'block';
+        }, 3000);
       </script>
   </body>
 </html>
